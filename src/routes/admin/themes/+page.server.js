@@ -48,7 +48,7 @@ export const load = async ({
   };
 
   return {
-    themes: fetchThemes(),
+    themes: await fetchThemes(),
   };
 };
 
