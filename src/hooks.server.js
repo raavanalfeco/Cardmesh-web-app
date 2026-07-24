@@ -6,7 +6,7 @@ export async function handle({
 }) {
   const user = event.cookies.get('user') ?? '{}';
   if (user === '{}') {
-    event.cookies.delete('access');
+    event.cookies.delete('access', { path: '/' });
   }
 
   const access = event.cookies.get('access') ?? '{}';
