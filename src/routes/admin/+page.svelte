@@ -97,7 +97,7 @@
 
                     <div class="d-flex justify-content-between">
                         <button class="btn btn-action rounded-circle d-flex align-items-center justify-content-center"
-                                on:click={downloadSvgAsPng(svgString, `${user.name}-QR.png`)}>
+                                on:click={() => downloadSvgAsPng(svgString, `${user?.name ?? 'card'}-QR.png`)}>
                             <div class="text-info">
                                 <DownloadIcon size="2.5x"/>
                             </div>

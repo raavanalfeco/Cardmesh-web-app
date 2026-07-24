@@ -287,9 +287,9 @@
     <div style="padding-top: 30px"></div>
 
     {#if theme.display.vCardBtn}
-        <div class="{displayMode} p-0" style="z-index: 1000">
+        <div class="{displayMode} pill-cta-wrap">
             <VCardButton
-                    className="btn w-100 rounded-0 py-3"
+                    className="btn pill-cta"
                     {vCard}
                     backgroundColor={theme.color.vCardBtn.background}
                     color={theme.color.vCardBtn.font}
@@ -324,6 +324,25 @@
     box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
   }
 
+  .pill-cta-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 1000;
+  }
+
+  .pill-cta {
+    border-radius: 5rem !important;
+    padding: 0.85rem 2rem !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+  }
+
+  .pill-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  }
+
   @media (max-width: 500px) {
     .fixed-bottom-prod {
       position: fixed;
@@ -331,6 +350,11 @@
       bottom: 0;
       left: 0;
       z-index: 1030;
+    }
+
+    .pill-cta-wrap {
+      padding: 1rem 1.5rem calc(1rem + env(safe-area-inset-bottom));
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.08), transparent);
     }
   }
 
