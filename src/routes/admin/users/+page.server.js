@@ -62,8 +62,8 @@ export const load = async ({
   };
 
   return {
-    themes: fetchThemes(),
-    users: fetchUsers(),
+    themes: await fetchThemes(),
+    users: await fetchUsers(),
   };
 };
 
