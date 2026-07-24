@@ -28,6 +28,6 @@ export const load = async ({
   };
 
   return {
-    clicks: clicks(),
+    clicks: await clicks(),
   };
 };
